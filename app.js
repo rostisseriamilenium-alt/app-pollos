@@ -7,7 +7,48 @@ let vendidosSin = 0;
 let vendidosCon = 0;
 
 let historial = [];
+// ------------------------
+// GUARDAR DATOS
+// ------------------------
 
+function guardarDatos(){
+
+    const datos = {
+
+        stock,
+        vendidosSin,
+        vendidosCon,
+        historial,
+        productos
+
+    };
+
+    localStorage.setItem(
+        "controlProducto",
+        JSON.stringify(datos)
+    );
+
+}
+
+function cargarDatos(){
+
+    const datos = localStorage.getItem("controlProducto");
+
+    if(!datos) return;
+
+    const d = JSON.parse(datos);
+
+    stock = d.stock ?? 0;
+
+    vendidosSin = d.vendidosSin ?? 0;
+
+    vendidosCon = d.vendidosCon ?? 0;
+
+    historial = d.historial ?? [];
+
+    Object.assign(productos,d.productos);
+
+}
 const productos = {
     pan: 0,
     canelones: 0,
@@ -25,8 +66,10 @@ function iniciarStock(){
         return;
     }
 
-    actualizar();
-
+    cargarDatos();
+actualizar();
+    guardarDatos();
+guardarDatos();
 }
 
 function actualizar(){
@@ -82,7 +125,7 @@ function vender(conEncargo){
     }
 
     actualizar();
-
+guardarDatos();
 }
 
 function deshacer(){
@@ -102,7 +145,7 @@ function deshacer(){
     vendidosCon = ultimo.vendidosCon;
 
     actualizar();
-
+guardarDatos();
 }
 
 function reiniciar(){
@@ -120,7 +163,7 @@ function reiniciar(){
         document.getElementById("stockInicial").value="";
 
         actualizar();
-
+guardarDatos();
     }
 
 }
