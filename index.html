@@ -22,10 +22,28 @@
 
 <h2>Stock inicial</h2>
 
-<input
-type="number"
-id="stockInicial"
-placeholder="Ejemplo: 100">
+<h2>Stock inicial</h2>
+
+<div class="filaStock">
+
+    <input id="stockInicial" type="number" placeholder="Ejemplo 100">
+
+    <button onclick="iniciarStock()">Iniciar</button>
+
+</div>
+
+<div class="filaAñadir">
+
+    <input
+        id="stockExtra"
+        type="number"
+        placeholder="+ Stock">
+
+    <button onclick="añadirStock()">
+        ➕
+    </button>
+
+</div>
 
 <button onclick="iniciarStock()">
 INICIAR
