@@ -6,7 +6,7 @@
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background:#f2f4f8;
+    background:#eef2f7;
     padding:20px;
 }
 
@@ -18,52 +18,80 @@ body{
 h1{
     text-align:center;
     color:#17375e;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .caja{
-    background:white;
+    background:#fff;
     border-radius:15px;
     padding:20px;
     margin-bottom:20px;
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
 }
 
-h2,h3{
-    text-align:center;
+h2{
     color:#17375e;
     margin-bottom:15px;
+    text-align:center;
+}
+
+.filaStock{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.filaStock input{
+    flex:1;
+    margin:0;
+}
+
+.filaStock button{
+    width:170px;
+    margin:0;
+}
+
+.filaAñadir{
+    display:flex;
+    justify-content:flex-end;
+    gap:10px;
+    margin-top:12px;
+}
+
+.filaAñadir input{
+    width:90px;
+    margin:0;
+}
+
+.filaAñadir button{
+    width:120px;
+    margin:0;
 }
 
 input[type=number]{
-    width:100%;
     padding:15px;
     font-size:22px;
-    border:2px solid #ddd;
+    border:2px solid #ccc;
     border-radius:10px;
-    margin-bottom:15px;
 }
 
 button{
-    width:100%;
-    padding:18px;
     border:none;
-    border-radius:12px;
-    font-size:22px;
+    border-radius:10px;
+    padding:16px;
+    font-size:20px;
     font-weight:bold;
     cursor:pointer;
-    margin-top:10px;
-    transition:.2s;
 }
 
 button:hover{
-    transform:scale(1.02);
+    opacity:.9;
 }
 
 #quedan{
+    text-align:center;
     font-size:90px;
     font-weight:bold;
-    text-align:center;
     color:#0d4f8b;
     margin:20px 0;
 }
@@ -76,19 +104,22 @@ button:hover{
 }
 
 .radio{
-    margin:20px 0;
     display:flex;
     justify-content:center;
     gap:30px;
+    margin:20px 0;
     font-size:22px;
 }
 
 .rojo{
+    width:100%;
     background:#d62828;
     color:white;
+    margin-bottom:10px;
 }
 
 .naranja{
+    width:100%;
     background:#f77f00;
     color:white;
 }
@@ -97,7 +128,6 @@ button:hover{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:15px;
-    margin-top:25px;
 }
 
 .botones button:first-child{
@@ -106,56 +136,6 @@ button:hover{
 }
 
 .botones button:last-child{
-    background:#1b8f3d;
+    background:#198754;
     color:white;
-}
-
-#productos{
-    margin-top:20px;
-}
-
-/* ========================= */
-/* STOCK INICIAL */
-/* ========================= */
-
-.filaStock{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.filaStock input{
-    flex:1;
-    width:auto;
-    margin-bottom:0;
-}
-
-.filaStock button{
-    width:180px;
-    margin-top:0;
-}
-
-/* ========================= */
-/* RETÉN */
-/* ========================= */
-
-.filaAñadir{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    gap:10px;
-    margin-top:15px;
-}
-
-.filaAñadir input{
-    width:80px;
-    margin-bottom:0;
-}
-
-.filaAñadir button{
-    width:60px;
-    height:60px;
-    margin-top:0;
-    padding:0;
-    font-size:28px;
 }
