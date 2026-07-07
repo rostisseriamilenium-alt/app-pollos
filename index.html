@@ -76,43 +76,41 @@
     </div>
 
     <!-- VENTA -->
-    <section class="packs">
+<section class="packs">
 
-    <button onclick="pack1()">
-        📦 PACK 1
-        <br>
-        <small>1/2 Pollo + 1/2 Caliu</small>
-    </button>
+    <h2>📦 Packs SIN ENCARGO</h2>
 
-    <button onclick="pack2()">
-        📦 PACK 2
-        <br>
-        <small>Pollo + Pan + Patatas</small>
-    </button>
+    <div class="filaPacks">
 
-    <button onclick="pack3()">
-        📦 PACK 3
-        <br>
-        <small>Pollo + Pan + Patatas + Canelón</small>
-    </button>
+        <button onclick="pack1(false)">📦 Pack 1</button>
+        <button onclick="pack2(false)">📦 Pack 2</button>
+        <button onclick="pack3(false)">📦 Pack 3</button>
 
-        <div id="selectorPatatas" class="selectorPatatas" style="display:none;">
+    </div>
+
+    <h2>📞 Packs CON ENCARGO</h2>
+
+    <div class="filaPacks">
+
+        <button onclick="pack1(true)">📦 Pack 1</button>
+        <button onclick="pack2(true)">📦 Pack 2</button>
+        <button onclick="pack3(true)">📦 Pack 3</button>
+
+    </div>
+
+</section>
+
+<div id="selectorPatatas" class="selectorPatatas" style="display:none;">
 
     <h3>Elige las patatas</h3>
 
     <div class="patatasFila">
 
-        <button onclick="seleccionarPatata('caliu')">
-            🥔 Caliu
-        </button>
+        <button onclick="seleccionarPatata('caliu')">🥔 Caliu</button>
 
-        <button onclick="seleccionarPatata('bravas')">
-            🍟 Bravas
-        </button>
+        <button onclick="seleccionarPatata('bravas')">🍟 Bravas</button>
 
-        <button onclick="seleccionarPatata('fritas')">
-            🍟 Fritas
-        </button>
+        <button onclick="seleccionarPatata('fritas')">🍟 Fritas</button>
 
     </div>
 
