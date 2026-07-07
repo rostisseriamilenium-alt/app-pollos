@@ -13,7 +13,7 @@
 
 <div class="contenedor">
 
-    <h1>🍗 Rostisseria Milenium</h1>
+    <h1> Rostisseria Milenium</h1>
 
     <!-- STOCK -->
 
@@ -76,11 +76,54 @@
     </div>
 
     <!-- VENTA -->
+    <section class="packs">
+
+    <button onclick="pack1()">
+        📦 PACK 1
+        <br>
+        <small>1/2 Pollo + 1/2 Caliu</small>
+    </button>
+
+    <button onclick="pack2()">
+        📦 PACK 2
+        <br>
+        <small>Pollo + Pan + Patatas</small>
+    </button>
+
+    <button onclick="pack3()">
+        📦 PACK 3
+        <br>
+        <small>Pollo + Pan + Patatas + Canelón</small>
+    </button>
+
+        <div id="selectorPatatas" class="selectorPatatas" style="display:none;">
+
+    <h3>Elige las patatas</h3>
+
+    <div class="patatasFila">
+
+        <button onclick="seleccionarPatata('caliu')">
+            🥔 Caliu
+        </button>
+
+        <button onclick="seleccionarPatata('bravas')">
+            🍟 Bravas
+        </button>
+
+        <button onclick="seleccionarPatata('fritas')">
+            🍟 Fritas
+        </button>
+
+    </div>
+
+</div>
+</section>
 
     <div class="caja">
 
         <h2>Venta</h2>
 
+        
         <input
             id="cantidadVenta"
             type="number"
