@@ -158,7 +158,7 @@ function vender(conEncargo){
 // PACK 1
 // ------------------------
 
-function pack1(){
+function pack1(conEncargo){
 
     if(stock < 0.5){
         alert("No quedan pollos");
@@ -169,12 +169,10 @@ function pack1(){
         stock,
         vendidosSin,
         vendidosCon,
-        productos: {...productos}
+        productos:{...productos}
     });
 
     stock -= 0.5;
-
-    let conEncargo = document.getElementById("conEncargoCheck").checked;
 
     if(conEncargo){
         vendidosCon += 0.5;
@@ -193,14 +191,17 @@ function pack1(){
 // PACK 2
 // ------------------------
 
-function pack2(){
+function pack2(conEncargo){
 
     if(stock < 1){
         alert("No quedan pollos");
         return;
     }
 
-    packPendiente = "pack2";
+    packPendiente = {
+        tipo:"pack2",
+        conEncargo:conEncargo
+    };
 
     document.getElementById("selectorPatatas").style.display="block";
 
@@ -210,14 +211,17 @@ function pack2(){
 // PACK 3
 // ------------------------
 
-function pack3(){
+function pack3(conEncargo){
 
     if(stock < 1){
         alert("No quedan pollos");
         return;
     }
 
-    packPendiente = "pack3";
+    packPendiente = {
+        tipo:"pack3",
+        conEncargo:conEncargo
+    };
 
     document.getElementById("selectorPatatas").style.display="block";
 
@@ -235,6 +239,31 @@ function seleccionarPatata(tipo){
         vendidosCon,
         productos:{...productos}
     });
+
+    stock--;
+
+    if(packPendiente.conEncargo){
+        vendidosCon++;
+    }else{
+        vendidosSin++;
+    }
+
+    productos.pan++;
+
+    productos[tipo]++;
+
+    if(packPendiente.tipo=="pack3"){
+        productos.canelones++;
+    }
+
+    packPendiente="";
+
+    document.getElementById("selectorPatatas").style.display="none";
+
+    actualizar();
+    guardarDatos();
+
+}
 
     stock--;
 
